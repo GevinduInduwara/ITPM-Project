@@ -13,22 +13,22 @@ module.exports = function (req, res, next) {
     });
 
     function saveData(callback) {
+      const package = new Package({
+        packageId: req.body.packageId,
+        members: req.body.members,
+        accomodation: req.body.accomodation,
+        meal: req.body.meal,
+        transport: req.body.transport,
+        destinations: req.body.destinations,
+      });
 
-        const package = new Package({
-            packageId: req.body.packageId,
-            members: req.body.members,
-            accomodation: req.body.accomodation,
-            meal: req.body.meal,
-            transport: req.body.transport,
-            destinations: req.body.destinations
-        });
-
-        package.save(function (err, result) {
-            if (err) {
-                onErr(err);
-            } else {
-                callback(null, result);
-            }
+      package
+        .save()
+        .then((result) => {
+          callback(null, result);
+        })
+        .catch((err) => {
+          onErr(err);
         });
     }
 

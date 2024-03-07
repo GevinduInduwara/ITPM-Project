@@ -14,19 +14,15 @@ module.exports = function (req, res, next) {
     });
 
     function updateData(callback) {
-        Package
-            .findOneAndRemove(
-                {
-                    _id: req.params.id
-                })
-            .lean()
-            .exec(function (err, result) {
-                if (err) {
-                    onErr(err);
-                } else {
-                    callback(null, result);
-                }
-            });
+      Package.findOneAndDelete({ packageId: req.params.id })
+        .lean()
+        .exec()
+        .then((result) => {
+          callback(null, result);
+        })
+        .catch((error) => {
+          onErr(error);
+        });
     }
 
     function onErr(err) {

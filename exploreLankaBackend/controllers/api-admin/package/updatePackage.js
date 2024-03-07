@@ -15,30 +15,30 @@ module.exports = function (req, res, next) {
     function updateData(callback) {
 
         Package
-            .findOneAndUpdate(
-                {
-                    _id: req.params.id,
-                },
-                {
-                    $set: {
-                        packageId: req.body.packageId,
-                        members: req.body.members,
-                        accomodation: req.body.accomodation,
-                        meal: req.body.meal,
-                        transport: req.body.transport,
-                        destinations: req.body.destinations
-                    }
-                },
-                { new: true }
-            )
-            .lean()
-            .exec(function (err, result) {
-                if (err) {
-                    onErr(err);
-                } else {
-                    callback(null, result);
+        .findOneAndUpdate(
+            {
+                packageId: req.params.id,
+            },
+            {
+                $set: {
+                    packageId: req.body.packageId,
+                    members: req.body.members,
+                    accomodation: req.body.accomodation,
+                    meal: req.body.meal,
+                    transport: req.body.transport,
+                    destinations: req.body.destinations
                 }
-            });
+            },
+            { new: true }
+        )
+        .lean()
+        .exec()
+        .then(result => {
+            callback(null, result);
+        })
+        .catch(error => {
+            onErr(error);
+        });
     }
 
     function onErr(err) {

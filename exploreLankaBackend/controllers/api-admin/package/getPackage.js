@@ -15,7 +15,7 @@ module.exports = function (req, res, next) {
     function returnData(callback) {
 
         Package
-            .findOne({ '_id': req.params.id })
+            .findOne({ 'packageId': req.params.id })
             .lean()
             .exec()
             .then(packageData => {
