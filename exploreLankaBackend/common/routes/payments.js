@@ -15,21 +15,23 @@ router.get('/:id', (req, res) => {
 })
 
 
-//post a new payment info
+//POST a new payment info
 router.post('/', async (req, res) => {
    
-    const payment = new Payment({
+    const {paymentId, paymentDate, paymentAmount, clientName, clientEmail} = req.body
+    /*const payment = new Payment({
         paymentId: req.body.paymentId,
         clientName: req.body.clientName,
         paymentDate: req.body.paymentDate,
         paymentAmount: req.body.paymentAmount,
-    })
+*/
 
     try {
-        const payment = await Payment.create({paymentId, paymentDate, paymentAmount, clientName, clientEmail})
-        res.status(201).json({ payment })
-    }catch(err) {
-        res.status(201).json({ err:error.message })
+        const payment =  await Payment.create({paymentId, paymentDate, paymentAmount, clientName, clientEmail})
+        res.status(200).json(payment)
+    }catch(errpr) {
+
+        res.status(200).json({error: error.message})
     }
 })
 
