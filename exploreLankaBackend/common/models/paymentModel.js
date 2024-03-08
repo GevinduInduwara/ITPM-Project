@@ -9,22 +9,28 @@ const paymentSchema = new Schema({
             required: true
         },
     clientName: {
-         type: String, required: true
+         type: String, 
+         required: true
         },
     paymentDate: { 
-        type: String, required: true
+        type: String,
+        required: true
         },
     paymentAmount: {
-        type: Number, required: true
+        type: Number,
+        required: true
         },
     clientEmail: { 
-        type: Date, required: true
+        type: Date,
+        required: true
         }
 }, {
     timestamps: true})
 
 
 module.exports = mongoose.model('payment', paymentSchema)
+
+
 /*
 paymentSchema.find().then((result) => {
     console.log(result)
