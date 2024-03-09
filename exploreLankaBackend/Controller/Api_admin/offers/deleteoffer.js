@@ -11,6 +11,7 @@ module.exports = function (req, res, next) {
             sendResponse(result);
         }
     });
+    
 
     function deleteData(callback) {
         offer.findOneAndDelete({ offerId: req.params.id })

@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
+
 const offersSchema = new Schema({
 
     offerId: { type: Number, required: true },

@@ -10,7 +10,8 @@ module.exports = function (req, res, next) {
         } else {
             sendResponse(result);
         }
-    });
+    }); 
+    
 
     function saveData(callback) {
         const newOffer = new offer({

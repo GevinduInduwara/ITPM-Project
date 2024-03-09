@@ -12,6 +12,7 @@ module.exports = function (req, res, next) {
         }
     });
 
+    
     function getalloffers(callback) {
         offer
             .find()

@@ -12,6 +12,7 @@ module.exports = function (req, res, next) {
         }
     });
 
+    
     function returnData(callback) {
         offer
             .findOne({ 'offerId': req.params.id })

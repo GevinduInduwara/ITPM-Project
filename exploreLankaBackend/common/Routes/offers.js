@@ -6,12 +6,13 @@ router.post('/create', function (req, res, next) {
     const create = require('../../Controller/Api_admin/offers/createoffer');
     create(req, res, next);
 });
-
+  
 // Update offer
 router.put('/update/:id', function (req, res, next) {
     const update = require('../../Controller/Api_admin/offers/updateoffer');
     update(req, res, next);
 });
+
 
 // Delete offer
 router.delete('/remove/:id', function (req, res, next) {
