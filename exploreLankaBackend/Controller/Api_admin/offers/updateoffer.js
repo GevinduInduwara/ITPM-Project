@@ -1,5 +1,5 @@
 const async = require('async');
-const Package = require('../../../common/Models/offermodel');
+const offer = require('../../../common/Models/offermodel');
 
 module.exports = function (req, res, next) {
     async.waterfall([
@@ -21,8 +21,12 @@ module.exports = function (req, res, next) {
                 {
                     $set: {
                         offerId: req.body.offerId,
-                        // Update other fields according to the offermodel.js schema
-                        // For example: title, description, validity, etc.
+                        Img: req.body.Img,
+                        previousPrice: req.body.previousPrice,
+                        discountPrice: req.body.discountPrice,
+                        offerTitle: req.body.offerTitle,
+                        offerDescription: req.body.offerDescription,
+                        offerValidity: req.body.offerValidity,
                     }
                 },
                 { new: true }

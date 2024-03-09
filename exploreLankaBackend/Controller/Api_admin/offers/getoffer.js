@@ -1,5 +1,5 @@
 const async = require('async');
-const Package = require('../../../common/Models/offermodel');
+const offer = require('../../../common/Models/offermodel');
 
 module.exports = function (req, res, next) {
     async.waterfall([
@@ -13,7 +13,7 @@ module.exports = function (req, res, next) {
     });
 
     function returnData(callback) {
-        Offer
+        offer
             .findOne({ 'offerId': req.params.id })
             .lean()
             .exec()

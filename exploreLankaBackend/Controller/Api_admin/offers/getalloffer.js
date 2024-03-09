@@ -1,5 +1,5 @@
 const async = require('async');
-const Package = require('../../../common/Models/offermodel');
+const offer = require('../../../common/Models/offermodel');
 
 module.exports = function (req, res, next) {
     async.waterfall([
@@ -13,15 +13,15 @@ module.exports = function (req, res, next) {
     });
 
     function getalloffers(callback) {
-        Package
+        offer
             .find()
             .sort('-createdAt')
             .lean()
             .exec()
-            .then(packages => {
+            .then(offer => {
                 const data = {
-                    count: packages.length,
-                    packages: packages,
+                    count: offer.length,
+                    offer: offer,
                 };
                 callback(null, data);
             })

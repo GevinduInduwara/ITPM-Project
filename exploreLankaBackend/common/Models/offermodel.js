@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const packageSchema = new Schema({
+const offersSchema = new Schema({
 
     offerId: { type: Number, required: true },
     Img: { type: String, required: true }, // URL to the banner image
@@ -15,4 +15,4 @@ const packageSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('packages', packageSchema)
+module.exports = mongoose.model('offers', offersSchema)
