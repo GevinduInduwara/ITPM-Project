@@ -16,13 +16,13 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use('/admin-api/payment', paymentRoutes)
+app.use('/api-client/payment', paymentRoutes)
 
 // DB connection and starting server
 
 connectDB()
   .then(() => {
-    const PORT = process.env.PORT || 3000
+    const PORT = process.env.PORT || 4000
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
   })
   .catch((error) => {

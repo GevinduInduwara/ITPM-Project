@@ -1,5 +1,5 @@
 const async = require('async');
-const Package = require('../../../common/models/packageModel')
+const Payment = require('../../../common/models/paymentModel')
 
 module.exports = function (req, res, next) {
     async.waterfall([
@@ -14,14 +14,14 @@ module.exports = function (req, res, next) {
 
     function returnData(callback) {
 
-        Package
+        Payment
             .findOne({ '_id': req.params.id })
             .lean()
             .exec()
-            .then(packageData => {
-                if (packageData) {
+            .then(paymentData => {
+                if (paymentData) {
                     const data = {};
-                    data['package'] = packageData;
+                    data['payment'] = paymentData;
                     callback(null, data);
                 } else {
                     onErr('no data');
