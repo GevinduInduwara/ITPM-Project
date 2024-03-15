@@ -1,51 +1,33 @@
-const express = require('express')
-const Payment = require('../models/paymentModel')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-
-// get all payment info
-router.get('/', (req, res) => {
-    res.json({messg: 'Get all payment info'})
-})
-
-
-// get a single payment info
-router.get('/:id', (req, res) => {
-    res.json({ messg: 'Get a single payment info'})
-})
-
-
-//POST a new payment info
-router.post('/', async (req, res) => {
+router.post('/create', function (req, res, next) {
    
-    const {paymentId, paymentDate, paymentAmount, clientName, clientEmail} = req.body
-    /*const payment = new Payment({
-        paymentId: req.body.paymentId,
-        clientName: req.body.clientName,
-        paymentDate: req.body.paymentDate,
-        paymentAmount: req.body.paymentAmount,
-*/
+       const create = require('../../controllers/api-admin/package');
+       create(req, res, next);
+});
 
-    try {
-        const payment =  await Payment.create({paymentId, paymentDate, paymentAmount, clientName, clientEmail})
-        res.status(200).json(payment)
-    }catch(errpr) {
+router.put('/update/:id', function (req, res, next) {
+   
+       const update = require('../../controllers/api-admin/package/updatePackage');
+       update(req, res, next);
+});
 
-        res.status(200).json({error: error.message})
-    }
-})
+router.delete('/remove/:id', function (req, res, next) {
+   
+       const remove = require('../../controllers/api-admin/package/deletePackage');
+       remove(req, res, next);
+});
 
+router.get('/get/:id', function (req, res, next) {
 
-//Delete payment info
-router.delete('/:id', (req, res) => {
-    res.json({ messg: 'Delete payment info'})
-})
+       const get = require('../../controllers/api-admin/package/getPackage');
+       get(req, res, next);
+});
 
+router.get('/', function (req, res, next) {
+       const getAll = require('../../controllers/api-admin/package/getAllPackage');
+       getAll(req, res, next);
+   });
 
-//UPDATE payment info
-router.patch('/:id', (req, res) => {
-    res.json({ messg: 'Update a payment info'})
-})
-
-
-module.exports = router
+module.exports = router; 
