@@ -15,7 +15,7 @@ module.exports = function (req, res, next) {
     function saveData(callback){
      
     const payment = new Payment({
-        paymentId: req.body.paymentId,
+       
         clientName: req.body.clientName,
         clientEmail: req.body.clientEmail,
         // paymentDate: req.body.paymentDate

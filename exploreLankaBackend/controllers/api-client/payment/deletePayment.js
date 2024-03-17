@@ -13,7 +13,8 @@ module.exports = function (req, res, next) {
     });
 
     function updateData(callback) {
-      Payment.findOneAndDelete({ paymentId: req.params.id })
+
+      Payment.findOneAndDelete({ _id: req.params.id })
         .lean()
         .exec()
         .then((result) => {
@@ -31,5 +32,5 @@ module.exports = function (req, res, next) {
     function sendResponse(document) {
         res.json(document);
     }
-0
+
 };

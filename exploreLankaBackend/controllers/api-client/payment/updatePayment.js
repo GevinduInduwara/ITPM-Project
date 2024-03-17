@@ -17,11 +17,11 @@ module.exports = function (req, res, next) {
         Payment
         .findOneAndUpdate(
             {
-                paymentId: req.params.id,
+                _id: req.params.id,
             },
             {
                 $set: {
-                    paymentId: req.body.paymentId,
+          
                     clientName: req.body.clientName,
                     clientEmail: req.body.clientEmail,
                 // paymentDate: req.body.paymentDate
