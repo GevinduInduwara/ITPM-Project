@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const port = 4000;
 
 
 // Create a new payment
@@ -26,13 +27,14 @@ router.delete('/remove/:id', function (req, res, next) {
 });
 
 
-// get payment by id0
+// get payment by id
 router.get('/get/:id', function (req, res, next) {
 
        const get = require('../../controllers/api-client/payment/getPayment');
        get(req, res, next);
 });
 
+//get All payments
 router.get('/', function (req, res, next) {
        const getAll = require('../../controllers/api-client/payment/getAllPayment');
        getAll(req, res, next);

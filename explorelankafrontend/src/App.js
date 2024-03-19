@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //pages & components
 
-import addPayment from './pages/addPayment';
+import viewAllPayment from './pages/viewAllPayment';
 import navBar from './components/navBar';
 import './index.css';
 
@@ -14,7 +14,7 @@ function App() {
         <div className='pages'>         
               <Routes>
                 
-                <Route path="/" element={<addPayment />} />
+                <Route path="/" element={<viewAllPayment />} />
 
               </Routes> 
         </div>
@@ -24,5 +24,5 @@ function App() {
   );
 }
 
-export default addPayment;
+export default viewAllPayment;
 
