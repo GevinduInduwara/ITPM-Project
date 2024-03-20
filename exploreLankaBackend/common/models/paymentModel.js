@@ -9,10 +9,10 @@ const paymentSchema = new Schema({
          required: true
         },
 
-    // paymentAmount: {
-    //     type: Number,
-    //      required: true
-    //     },
+    paymentAmount: {
+        type: Number,
+         required: true
+        },
 
     clientEmail: { 
         type: String,
@@ -20,7 +20,7 @@ const paymentSchema = new Schema({
         }
 }, 
     {    
-        timestamps: true
+       // timestamps: true
     }
     )
 

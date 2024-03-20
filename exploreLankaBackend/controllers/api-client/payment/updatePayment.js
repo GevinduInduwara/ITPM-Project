@@ -24,7 +24,7 @@ module.exports = function (req, res, next) {
           
                     clientName: req.body.clientName,
                     clientEmail: req.body.clientEmail,
-                // paymentDate: req.body.paymentDate
+                    paymentAmount: req.body.paymentAmount,
                 }
             },
             { new: true }
