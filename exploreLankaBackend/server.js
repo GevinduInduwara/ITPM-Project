@@ -16,13 +16,13 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use('/admin-api/package', packageRoute)
+app.use('/api/package', packageRoute)
 
 // DB connection and starting server
 
 connectDB()
   .then(() => {
-    const PORT = process.env.PORT || 3000
+    const PORT = process.env.PORT || 8000
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
   })
   .catch((error) => {

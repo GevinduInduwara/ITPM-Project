@@ -1,33 +1,13 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
 
-router.post('/create', function (req, res, next) {
-   
-       const create = require('../../controllers/api-admin/package/createPackage');
-       create(req, res, next);
-});
+const router = express.Router()
 
-router.put('/update/:id', function (req, res, next) {
-   
-       const update = require('../../controllers/api-admin/package/updatePackage');
-       update(req, res, next);
-});
+const packageController = require('../../controllers/packageController')
 
-router.delete('/remove/:id', function (req, res, next) {
-   
-       const remove = require('../../controllers/api-admin/package/deletePackage');
-       remove(req, res, next);
-});
+router.get('/', packageController.getAllPackage)
+router.post('/create', packageController.addPackage)
+router.get('/get/:id', packageController.getPackage)
+router.put('/update/:id', packageController.updatePackage)
+router.delete('/delete/:id', packageController.deletePackage)
 
-router.get('/get/:id', function (req, res, next) {
-
-       const get = require('../../controllers/api-admin/package/getPackage');
-       get(req, res, next);
-});
-
-router.get('/', function (req, res, next) {
-       const getAll = require('../../controllers/api-admin/package/getAllPackage');
-       getAll(req, res, next);
-   });
-
-module.exports = router; 
+module.exports = router

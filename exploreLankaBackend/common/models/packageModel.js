@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const packageSchema = new Schema({
 
-  packageId: { type: Number, required: true},
+  name: { type: String, required: true},
   members: { type: Number, required: true},
   accomodation : {type: String, required: true, enum: ['2-star', '3-star', '4-star', '5-star']},
   meal: {type: String, required: true, enum: ['breakfast', 'lunch', 'dinner']},
