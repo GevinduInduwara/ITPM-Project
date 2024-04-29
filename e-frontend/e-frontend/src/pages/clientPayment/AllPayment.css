@@ -1,0 +1,72 @@
+.allpayments{
+    display: flex;
+}
+.allpaymentscontainer{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    flex:1;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 50px;
+    align-items: center;
+}
+.allpaymentsCard{
+    box-shadow: rgba(255, 70, 2, 0.24) 0px 3px 8px;
+    display: flex;
+}
+
+.allpaymentscontainer button{
+    margin-left: 15px;
+    color:black;
+    background-color: rgb(180, 146, 95);
+    border-radius: 5px;
+    border: none;
+    height: 32px;
+    width: 150px;
+}
+
+.allpaymentsCard table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+}
+
+.allpaymentscontainer button:hover{
+    background-color:#daa520;
+}
+
+.allpaymentscontainer input{
+    width:250px;
+}
+
+.allpaymentscontainer h1{
+    margin-left: 50px;
+    font-weight: 500;
+}
+
+.row search{
+    margin-left:50px;
+    border: #ff0000;
+}
+
+.paymenttable th{
+    background-color: rgb(180, 146, 95);
+    padding-left: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+}
+
+.paymenttable td{
+    background-color:  rgba(240, 248, 255, 0.607);
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    word-break: break-all;
+}
+
