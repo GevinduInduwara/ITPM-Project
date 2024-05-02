@@ -1,0 +1,56 @@
+.navbar_con{
+    position: sticky;
+    top: 0;
+    padding: auto;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    border-bottom: 1px solid #89898978;
+    background-image: url('../../assets/bkImg.jpg') !important;
+    z-index: 999;
+}
+
+.logoImage{
+    margin-left: 20px;
+    height: 75px;
+}
+
+.navPages{
+    display: flex;
+    margin-right: 200px;
+    align-items: center;
+}
+
+.navPages li{
+    list-style-type: none;
+    margin: 0 30px;
+}
+
+.navPages li:hover a{
+    color: rgb(182, 146, 95);
+}
+
+.navPages li a{
+    text-decoration: none;
+    color: white;
+    transition: 300ms;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.navPages .navPage.active a{
+    color: rgb(182, 146, 95);
+    font-weight: 500;
+}
+
+@media (max-width: 880px) {
+    .navbar_con{
+        display: none;
+    }
+  }
+  
