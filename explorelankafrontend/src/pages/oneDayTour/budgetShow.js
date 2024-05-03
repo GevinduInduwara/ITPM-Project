@@ -8,7 +8,7 @@ const BookingDetailsCard = () => {
   const [eachAmount, setEachAmount] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/getBudget')
+    axios.get('http://localhost:4000/api/getBudget')
       .then((res) => {
         setEachAmount(res.data.eachAmount);
       })
