@@ -2,7 +2,7 @@ import React from 'react'
 import './fixednav.css'
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import logo from '../fixednavbar/assets/NewLogoPng.png';
+import logo from '../fixednavbar/assets/logo2.png';
 import { Link } from 'react-router-dom';
 
 export default function FixedNav({selectedPage}) {
