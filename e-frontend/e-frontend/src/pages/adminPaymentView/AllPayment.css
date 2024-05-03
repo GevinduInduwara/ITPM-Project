@@ -1,68 +1,104 @@
-.allpayments{
+.allpayments {
     display: flex;
-}
-.allpaymentscontainer{
+  }
+  
+  .allpaymentscontainer {
     margin-top: 20px;
-    margin-left: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 100px;
-    flex:1;
-}
-
-h1{
-    font-size: 30px;
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 1200px; /* Added max-width for better layout on larger screens */
+  }
+  
+  h1 {
+    font-size: 2rem; /* Using rem for better scalability */
     font-weight: 500;
-    margin-left: 50px;
-    align-items: center;
-}
-.allpaymentsCard{
-    box-shadow: rgba(255, 70, 2, 0.24) 0px 3px 8px;
-    display: flex;
-}
-
-.allpaymentscontainer button{
-    margin-left: 15px;
-    color:black;
-    background-color: rgb(180, 146, 95);
-    border-radius: 5px;
+    margin-left: 0; /* Removed redundant margin */
+    margin-bottom: 20px; /* Added margin bottom for separation */
+  }
+  
+  .allpaymentsCard {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Adjusted box shadow */
+    border-radius: 8px; /* Added border radius for softer edges */
+    overflow: auto; /* Added overflow for horizontal scrolling if needed */
+  }
+  
+  .allpaymentscontainer button {
+    color: white; /* Adjusted button text color for better contrast */
+    background-color: rgb(255, 153, 1);
     border: none;
+    border-radius: 5px;
     height: 32px;
     width: 150px;
-}
-
-.allpaymentsCard table{
-    margin-left: auto;
-    margin-right: auto;
-    width: 1500px;
-}
-
-.allpaymentscontainer button:hover{
-    background-color:#3f20da;
-}
-
-.allpaymentscontainer input{
-    width:250px;
-}
-
-.allpaymentscontainer h1{
-    margin-left: 50px;
-    font-weight: 500;
-}
- 
-
-
-.paymenttable th{
+    cursor: pointer; /* Added cursor pointer for better UX */
+  }
+  
+  .allpaymentscontainer button:hover {
+    background-color: #ff9900; /* Adjusted button hover color */
+  }
+  
+  .allpaymentscontainer input {
+    width: 100%; /* Adjusted input width for responsiveness */
+    max-width: 400px; /* Added max-width for better layout on larger screens */
+  }
+  
+  .paymenttable {
+    width: 100%; /* Made table width 100% for better responsiveness */
+    border-collapse: collapse; /* Collapsed border spacing */
+  }
+  
+  .paymenttable th,
+  .paymenttable td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: left; /* Aligned text to the left for better readability */
+  }
+  
+  .paymenttable th {
     background-color: rgb(180, 146, 95);
-    padding-left: 40px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 22px;
-}
-
-.paymenttable td{
-    background-color:  rgba(240, 248, 255, 0.607);
+    color: white;
+    font-size: 1.1rem; /* Adjusted font size for better consistency */
+    font-weight: 500;
+  }
+  
+  .paymenttable td {
+    background-color: rgba(255, 254, 186, 0.9); /* Adjusted background color */
     color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    word-break: break-all;
-}
+    font-weight: 500;
+  }
+  
+  /* Added styles for table hover effect */
+  .paymenttable tbody tr:hover {
+    background-color: rgba(255, 254, 186, 0.7);
+  }
+  
+  .searchbox {
+    position: relative;
+  }
+  
+  .searchbox input[type="search"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  
+  .searchbox input[type="search"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  .searchbox input[type="search"]::placeholder {
+    color: #999; /* Adjust placeholder color */
+  }
+  
+  .searchbox .fa-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: #999; /* Adjust search icon color */
+  }
+  

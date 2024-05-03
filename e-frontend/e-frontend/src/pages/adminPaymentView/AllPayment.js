@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./AllPayment.css";
 import { Link } from "react-router-dom";
 import SideNavBar from "../../components/sidenavbar/sideNavBar";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 function AllPayments() {
   const [payments, setPayments] = useState([]);
   const [search, setSearch] = useState("");
+  const componentRef = useRef();
 
   useEffect(() => {
     function getPayments() {
@@ -35,30 +38,38 @@ function AllPayments() {
       });
   }
 
+  function generatePDF() {
+    html2canvas(componentRef.current).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "PNG", 0, 0);
+      pdf.save("payment_report.pdf");
+    });
+  }
+
   return (
     <div className="allpayments">
       <SideNavBar />
       <div className="allpaymentscontainer">
         <h1>All Client Payment Records</h1>
-        <br></br>
-
-        {/* <a className="btn btn-primary" href="./adminPaymentView/paymentReport" >
-            <i className="far fa-info-alt"></i>&nbsp;Get Report
-            </a> */}
-
-
+        <br />
         <div className="row">
           <div className="searchbox">
             <input
               type="search"
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Enter Name"
+              placeholder="Search..."
               className="fa fa-search"
             />
+             <button type="button" className="btnpaymentadd" onClick={generatePDF}>
+          Generate PDF Report
+        </button>
           </div>
+          <br />
+          <br />
         </div>
-        <br></br>
-        <div className="allpaymentsCard">
+        <br />
+        <div className="allpaymentsCard" ref={componentRef}>
           <table className="paymenttable">
             <tr>
               <th scope="col">Payment Name</th>
@@ -94,23 +105,23 @@ function AllPayments() {
                     </Link>
                   </td>
                   <td>
-                    <Link to="/">
-                      <button
-                        onClick={() => {
-                          handleDelete(payment._id);
-                        }}
-                        type="button"
-                        class="btn btn-danger"
-                      >
-                        Delete
-                      </button>
-                    </Link>
+                    <button
+                      onClick={() => {
+                        handleDelete(payment._id);
+                      }}
+                      type="button"
+                      className="btn btn-danger"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
           </table>
         </div>
-        <br></br>
+        <br />
+       
+        <br />
         <a href="/addpayment">
           <button type="button" className="btnpaymentadd">
             Add Payment
