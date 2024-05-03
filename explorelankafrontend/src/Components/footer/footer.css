@@ -1,0 +1,146 @@
+.section_padding {
+    padding: 4rem 4rem;
+}
+
+.footer {
+    background-color: black;
+}
+
+.sb_footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sb_footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.sb_footer-links-div {
+    width: 150px;
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: rgb(182, 146, 95);
+}
+
+.sb_footer-links-div a {
+    color: rgb(182, 146, 95);
+    text-decoration: none;
+}
+
+.sb_footer-links-div a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+.sb_footer-links-div h4 {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 0.9rem;
+}
+
+.sb_footer-links-div p {
+    font-size: 13px;
+    line-height: 15px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.sb_footer-links-div .social-names .links {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 10px 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: rgb(182, 146, 95);
+    transition: all 0.5s ease;
+}
+
+
+
+.sb_footer-links-div .social-names a:hover{
+    color: rgb(182, 146, 95);
+    background-color: white;
+}
+
+.sb_footer-below {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+}
+
+.sb_footer-below-links {
+    display: flex;
+    flex-direction: row;
+}
+
+hr {
+    color: rgb(182, 146, 95);
+    width: 100%;
+}
+
+.sb_footer-copyright p {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgb(182, 146, 95);
+    font-weight: 600;
+}
+
+@media screen and (max-width: 85px) {
+    .sb_footer-heading h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sb_footer-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .sb_footer-links div {
+        margin: 1rem 0;
+    }
+
+    .sb_footer-btn p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .sb_footer-below {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .sb_footer-below-links {
+        flex-direction: column;
+    }
+
+    .sb_footer-below-links p {
+        margin-left: 0rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sb_footer-heading h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
+}
