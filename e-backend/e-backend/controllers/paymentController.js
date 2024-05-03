@@ -1,14 +1,14 @@
 const PaymentModel = require('../common/models/paymentModel')
 
 const addPayment = async (req, res, next) => {
-  const { name, amount, payment } = req.body 
+  const { name, email, phone} = req.body 
   let paymentmodel
 
   try {
     paymentmodel = new PaymentModel({
         name,
-        amount,
-        payment,
+        email,
+        phone,
         
     })
     await paymentmodel.save()
@@ -43,13 +43,13 @@ const getPayment = async (req, res, next) => {
 
 const updatePayment = async (req, res, next) => {
   const id = req.params.id
-  const { name, amount, payment } = req.body 
+  const { name, email, phone } = req.body 
 
   let paymentmodel
 
   try {
     paymentmodel = await PaymentModel.findByIdAndUpdate(id, {
-      name, amount, payment
+      name, email, phone
     }, { new: true })
   } catch (err) {
     console.log(err)
