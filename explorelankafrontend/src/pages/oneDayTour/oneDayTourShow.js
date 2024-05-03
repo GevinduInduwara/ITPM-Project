@@ -46,7 +46,7 @@ const DayTours = ({ google }) => {
   return (
     <div className="packagebg">
       <FixedNav />
-      <div className="daytourheader">Best Route</div>
+      <div className="daytourheader">Best Path</div>
       <div className="row content-main">
         <div className="col-md-5">
           <div className="sorted-distances-container">
