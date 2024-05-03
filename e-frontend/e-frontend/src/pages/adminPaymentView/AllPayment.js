@@ -61,9 +61,9 @@ function AllPayments() {
               placeholder="Search..."
               className="fa fa-search"
             />
-             <button type="button" className="btnpaymentadd" onClick={generatePDF}>
-          Generate PDF Report
-        </button>
+            <button type="button" className="btnpaymentadd" onClick={generatePDF}>
+              Generate PDF Report
+            </button>
           </div>
           <br />
           <br />
@@ -72,9 +72,9 @@ function AllPayments() {
         <div className="allpaymentsCard" ref={componentRef}>
           <table className="paymenttable">
             <tr>
-              <th scope="col">Payment Name</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Payment Type</th>
+              <th scope="col">Client Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
               <th scope="col">Action</th>
               <th scope="col">Action</th>
             </tr>
@@ -87,16 +87,17 @@ function AllPayments() {
               .map((payment) => (
                 <tr key={payment._id}>
                   <td>{payment.name}</td>
-                  <td>{payment.amount}</td>
-                  <td>{payment.payment}</td>
+                  <td>{payment.email}</td>
+                  <td>{payment.phone}</td>
+                  
                   <td>
                     <Link
                       to="/updatepayment"
                       state={{
                         _id: payment._id,
                         name: payment.name,
-                        amount: payment.amount,
-                        payment: payment.payment,
+                        email: payment.email,
+                        phone: payment.phone,
                       }}
                     >
                       <button type="button" className="btnpaymentupdate">
@@ -120,7 +121,6 @@ function AllPayments() {
           </table>
         </div>
         <br />
-       
         <br />
         <a href="/addpayment">
           <button type="button" className="btnpaymentadd">

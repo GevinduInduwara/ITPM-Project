@@ -1,50 +1,115 @@
+/* Overall Page Styling */
+body {
+  background-image: url('../../assets/back4.jpg');
+  background-size: cover;
+  background-color: #f5f5f5; /* Light gray background */
+  font-family: Arial, sans-serif; /* Clean and readable font */
+}
+
 .paymentmain {
-  display: flex;
+  display: flex; /* Use flexbox for vertical layout */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  align-items: center; /* Center elements horizontally */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 10px; /* Add some padding for spacing */
 }
 
-.payment-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  gap: 10px;
+.package-details {
+  width: 80%; /* Adjust width as needed */
+  max-width: 500px; /* Set a maximum width */
+  background-color: #fff; /* White background */
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px; /* Add some padding for spacing */
+  margin-bottom: 20px; /* Add some spacing below */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
-
-
 
 .form-control {
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
 .btn-submit {
-  background-color: #007bff;
+  background-color: #3379fa; /* Blue color for submit button */
   color: white;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
 }
 
-.btn-submit:hover {
-  background-color: #0056b3;
+.error {
+  color: red;
+  font-size: 14px;
 }
 
-
-.total{
-  background-color: #0056b3;
+@media (max-width: 1000px) {
+  .payment-form,
+  .card-form,
+  .package-details {
+    width: 100%; /* Adjust width for smaller screens */
+    padding: 15px;
+  }
 }
 
+/* Package Details Section */
+.package-details {
+  width: 50%; /* Set width to take half of the container */
+  max-width: 500px; /* Set a maximum width */
+  margin-left: -1100px;
+  margin-top: 400px;
+  background-color: #fff; /* White background */
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  backface-visibility: inherit;
+  padding: 50px; /* Add some padding for spacing */
+  margin-bottom: 0px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
 
-.total {
+/* Payment Form Section */
+.payment-form {
+  width: 1500px;
+  max-width: 800px;
+  height: 1200px;
+  margin-top: -680px;
+  margin-left: 400px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: right;
-  justify-content: right;
-  padding: 20px;
+  gap: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+}
+.expiration {
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  padding: 4px;
+  display: flex;
+  gap: 5px;
 }
 
+.expiration input {
+  border: 0;
+}
+
+.month {
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.year {
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  padding: 3px;
+  display: flex;
+  gap: 5px;
+}

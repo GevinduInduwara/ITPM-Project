@@ -1,79 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-.paymentupdate{
-    display: flex;
-}
-.paymentupdatebg{
-    background-image: url('../../assets/bkImg.jpg');
-    height: 100vh;
-    flex: 1;
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.addpaymentupdateheader{
-
-    
-    color:white;
-    margin-bottom: 30px;
-    padding: 30px 0;
-    grid-column: 1/-1;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.addpaymentupdateheader h1{
+/* Header Styles */
+.addpaymentupdateheader {
+    text-align: center;
+    padding: 60px 0;
+}
 
-    font-weight:400;
-    font-size: 40px;
-    letter-spacing: 10px;
+.addpaymentupdateheader h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 2px;
     margin-bottom: 10px;
+}
+
+.addpaymentupdateheader h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* Form Styles */
+.paymentupdatecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+
+.selectpaymentupdateform {
+    margin-top: 30px;
+}
+
+.selectpaymentupdateform label {
+    font-size: 18px;
+}
+
+.selectpaymentupdateform input[type="text"] {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+
+.addpaymentupdatebutton {
     text-align: center;
-    
-
+    margin-top: 30px;
 }
 
-
-.addpaymentupdateheader h3{
-
-    text-align: center;
-}
-
-.paymentupdatecontainer form{
-
-    margin-left: 250px;
-    
-}
-
-.selectpaymentupdateform{
-
-    margin-left:70px;
-    margin-top: 60px;
-}
-
-.selectpaymentupdateform label{
-
-    font-size: 20px;
-    color:white;
-}
-
-.selectpaymentupdateform input{
-
-    width:600px;
-    height: 42px;
-    border-radius: 10px;
-}
-
-.addpaymentupdatebutton button{
-
-    margin-left: 200px;
-    margin-top:30px;
+.addpaymentupdatebutton button {
     height: 50px;
-    border-radius: 10px;
-    background-color: rgb(180, 146, 95);;
-    color: black;
+    border-radius: 25px;
+    background-color: #FFC107;
+    color: #333;
     border: none;
-    width: 120px;
-
+    width: 180px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.addpaymentupdatebutton button:hover{
-
-    background-color:#daa520;
+.addpaymentupdatebutton button:hover {
+    background-color: #FFD54F;
 }
