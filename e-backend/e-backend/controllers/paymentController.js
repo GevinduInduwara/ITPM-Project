@@ -9,6 +9,7 @@ const addPayment = async (req, res, next) => {
         name,
         amount,
         payment,
+        
     })
     await paymentmodel.save()
   } catch (err) {
