@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import './sideNavBar.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+//import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+//import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+//import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+//import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import AssessmentIcon from '@mui/icons-material/Assessment';
@@ -26,47 +26,47 @@ const SideNavBar=()=> {
         },
         {
             path: "/admin_orders_view",
-            text: "Order Management",
+            text: "Package Management",
             icon: <ShoppingCartIcon />,
         },
-        {
-            path: "/admin_menu_view",
-            text: "Menu Management",
-            icon: <RestaurantMenuIcon />,
-        },
+        // {
+        //     path: "/admin_menu_view",
+        //     text: "Menu Management",
+        //     icon: <RestaurantMenuIcon />,
+        // },
         {
             path: "/admin_employee_list",
-            text: "Employee Handling",
+            text: "User Handling",
             icon: <PeopleAltIcon />,
         },
-        {
-            path: "/admin_employee_list",
-            text: "Delivery Handling",
-            icon: <DeliveryDiningIcon />,
-        },
-        {
-            path: "/Supplier",
-            text: "Supplier Handling",
-            icon: <LocalShippingIcon />,
-        },
+        // {
+        //     path: "/admin_employee_list",
+        //     text: "Delivery Handling",
+        //     icon: <DeliveryDiningIcon />,
+        // },
+        // {
+        //     path: "/Supplier",
+        //     text: "Package Handling",
+        //     icon: <LocalShippingIcon />,
+        // },
         {
             path: "#",
-            text: "Customer Handling",
+            text: "Chat Support",
             icon: <SupportAgentIcon />,
         },
         {
             path: "#",
-            text: "Event Reservations",
+            text: "Offer Management",
             icon: <CelebrationIcon />,
         },
-        {
-            path: "/admin_feedback_view",
-            text: "Feedback Handling",
-            icon: <InsertEmoticonIcon />,
-        },
+        // {
+        //     path: "/admin_feedback_view",
+        //     text: "Feedback Management",
+        //     icon: <InsertEmoticonIcon />,
+        // },
         {
             path: "/admin_sales_view",
-            text: "Sales",
+            text: "Payment Records",
             icon: <AssessmentIcon />,
         },
     ];        
@@ -89,15 +89,7 @@ const SideNavBar=()=> {
                         </button>
                     </div>
                     <div className="nav-menu">
-                        {/* {
-                            menuItems.map(({ text, icon }) => (
-                                <a href="#" className={isExpanded ? "menu-items" : "menu-items menu-items-NX"}>
-                                    <img className="menu-item-icon" src={icon} alt="" srcset="" />
-                                    {isExpanded && <p>{text}</p>}
-                                    {!isExpanded  && <div className="tooltip">{text}</div>}
-                                </a>
-                            ))
-                        } */}
+                       
 
                         {
                             menuItems.map((item, index) => (
