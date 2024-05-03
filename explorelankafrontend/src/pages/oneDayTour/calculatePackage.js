@@ -30,7 +30,7 @@ export default function AddPackage(){
      }).catch((err)=>{
       alert(err)
      })
-     navigate('/')  
+     navigate('/budgetShow')  
   }}
 
 return(
@@ -117,6 +117,4 @@ return(
     <Footer/>
   </div>
 </div>
-
-
   )}
