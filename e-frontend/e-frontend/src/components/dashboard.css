@@ -1,0 +1,142 @@
+.side-nav-container {
+    background-color: #3f51b5; /* Dark blue */
+    width: 300px;
+    height: 100vh;
+    position: relative;
+    color: white;
+    transition: 0.4s;
+    overflow-y: auto; /* Added to enable scrolling if content exceeds viewport height */
+}
+
+.side-nav-container-NX {
+    width: 85px;
+}
+
+.nav-upper,
+.nav-heading,
+.nav-menu,
+.nav-footer {
+    display: grid;
+}
+
+.nav-heading {
+    margin-left: 25px;
+    grid-template-columns: 2fr, 1fr;
+    grid-template-rows: 1fr;
+    height: 55px;
+}
+
+.nav-brand {
+    padding-top: 25px;
+    display: flex;
+    color: white;
+}
+
+.burger {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: auto -30px;
+    background-color: #673ab7; /* Purple */
+    border: 2px solid white;
+    padding: 13px;
+    padding-top: 10px;
+    border-radius: 90px;
+    height: 60px;
+    width: 60px;
+    transition: transform 0.4s;
+}
+
+.burger span {
+    display: block;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 15px;
+    height: 5px;
+    width: 30px;
+    transition: 0.4s;
+}
+
+.burger-in span:nth-child(1),
+.burger-out span:nth-child(3) {
+    width: 25px;
+    transform: translate(3px, 8px) rotate(30deg);
+}
+
+.burger-in span:nth-child(3),
+.burger-out span:nth-child(1) {
+    width: 25px;
+    transform: translate(-3px, -8px) rotate(30deg);
+}
+
+.nav-menu {
+    grid-template-rows: repeat(7, 1fr);
+    margin-top: 50px;
+}
+
+.menu-items {
+    height: 55px;
+    width: 16em;
+    display: flex;
+    padding: 14px;
+    color: white;
+    text-decoration: none;
+    margin: auto 20px;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.4s;
+}
+
+.menu-items:hover {
+    background-color: #5c6bc0; /* Darker blue */
+}
+
+.menu-item-icon {
+    margin-right: 10px;
+}
+
+.menu-items-text {
+    font-size: 14px;
+    height: 57px;
+    width: 10em;
+    margin: auto 20px;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.4s;
+    opacity: 0;
+}
+
+.menu-items:hover .menu-items-text {
+    opacity: 1;
+}
+
+.menu-items-NX {
+    margin: auto;
+    width: 4.5em;
+}
+
+.nav-footer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 87px;
+    bottom: 0;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.logout-icon {
+    height: 70px;
+    margin: auto;
+    border-radius: 90px;
+    padding: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.logout-icon:hover {
+    background-color: #7e57c2; /* Light purple */
+}
