@@ -99,7 +99,7 @@ function AddPayment(){
     <div className="paymentmain">
       <FixedNavbar/>
      
-      <div className="package-details">
+      <div className="package-details-payment">
         <h1><b>Selected Package Details</b></h1><br></br>
         <h4>Package Name : package 1</h4><br></br>
         <h4>Package Price : Rs : 30,000</h4><br></br>
@@ -113,43 +113,43 @@ function AddPayment(){
         <h2><b>Enter your details</b></h2>
         
         <h5>Enter your name</h5>
-        <input type="text" className="form-control" id="name" placeholder="Your Name" required="true" value={name} onChange={(e)=> setName(e.target.value)} />
+        <input type="text" className="form-control-payment" id="name" placeholder="Your Name" required="true" value={name} onChange={(e)=> setName(e.target.value)} />
         {/* {error && name.length <= 0 && <label>Name cannot be empty!</label>} */}
         
         <h5>Email</h5>
-        <input type="text" className="form-control" id="email" placeholder="Your Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
+        <input type="text" className="form-control-payment" id="email" placeholder="Your Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
         {error && email.length <= 0 && <label>Email cannot be empty!</label>}
         
         <h5>Phone Number</h5>
-        <input type="tel" className="form-control" id="phone" value={phone} placeholder="Your Phone Number" onChange={(e)=> setPhone(e.target.value)} />
+        <input type="tel" className="form-control-payment" id="phone" value={phone} placeholder="Your Phone Number" onChange={(e)=> setPhone(e.target.value)} />
         {error && phone.length <= 0 && <label>Phone Number cannot be empty!</label>}
      
         <h5>Name on Card</h5>
-        <input type="text" className="form-control" id="nameCard" value={cardName} onChange={(e)=> setcardName(e.target.value)} placeholder="Your Name"/>
+        <input type="text" className="form-control-payment" id="nameCard" value={cardName} onChange={(e)=> setcardName(e.target.value)} placeholder="Your Name"/>
         {error && cardName.length <= 0 && <label>Card Name cannot be empty!</label>}
         
         <h5>Credit/Debit Card Number</h5>
-        <input type="text" className="form-control" id="cardNo" value={cardNumber} onChange={(e)=> setcardNumber(e.target.value)} pattern="[0-9]{16}" placeholder="XXXX XXXX XXXX XXXX"/>
+        <input type="text" className="form-control-payment" id="cardNo" value={cardNumber} onChange={(e)=> setcardNumber(e.target.value)} pattern="[0-9]{16}" placeholder="XXXX XXXX XXXX XXXX"/>
         {error && cardNumber.length <= 0 && <label>Card Number cannot be empty!</label>}
         
         <div className="col-md-6 month">
         <h5>Expiry Date</h5>
-        <input type="text" className="form-control" id="expMonth" placeholder="MM" maxLength="2" size="2" value={expMonth} onChange={(e) => setExpMonth(e.target.value)} />
+        <input type="text" className="form-control-payment" id="expMonth" placeholder="MM" maxLength="2" size="2" value={expMonth} onChange={(e) => setExpMonth(e.target.value)} />
         <span></span></div>
         <div className="col-md-6 year">
-        <input type="text" className="form-control" id="expYear" placeholder="YY" maxLength="2" size="2" value={expYear} onChange={(e) => setExpYear(e.target.value)} />
+        <input type="text" className="form-control-payment" id="expYear" placeholder="YY" maxLength="2" size="2" value={expYear} onChange={(e) => setExpYear(e.target.value)} />
         </div>
         <h5>CVV / CVC</h5>
-        <input type="password" className="form-control" id="cvv" value={cvv} onChange={(e)=> setcvv(e.target.value)} pattern="[0-9]{3}"  onClick={() => setError(false)} />
+        <input type="password" className="form-control-payment" id="cvv" value={cvv} onChange={(e)=> setcvv(e.target.value)} pattern="[0-9]{3}"  onClick={() => setError(false)} />
         {error && cvv.length <= 0 && <label>CVV cannot be empty!</label>}
 
-        <button onClick={sendData} type="button" className="btn btn-submit">{editMode ? "Update Payment" : "Save Details"}</button>
+        <button onClick={sendData} type="button" className="btn btn-submit-payment">{editMode ? "Update Payment" : "Save Details"}</button>
         
-        <button onClick={clearForm} type="button" className="btn btn-submit">Clear Form</button>
+        <button onClick={clearForm} type="button" className="btn btn-submit-payment">Clear Form</button>
       </div>
        <br></br><br></br>
     
-      <button onClick={() => navigate('/checkout')} type="button" className="btn btn-submit">Checkout</button>
+      <button onClick={() => navigate('/home')} type="button" className="btn btn-submit-payment"> Checkout</button>
             
       <br></br><br></br>
      <Footer/>

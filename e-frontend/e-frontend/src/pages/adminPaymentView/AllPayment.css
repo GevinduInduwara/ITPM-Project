@@ -2,8 +2,8 @@
     display: flex;
   }
   .body {
-    background-image: url('../../assets/white.png');
-    background-size: cover;
+    
+  
   }
   .allpaymentscontainer {
     margin-top: 20px;
