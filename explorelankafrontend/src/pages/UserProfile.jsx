@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDeleteUser, useGetUser, useUpdateUser, useUploadAvatar } from '../hooks/userHooks';
 import { useLogout } from '../hooks/authHooks';
+import FixedNav from "../Components/fixednavbar/FixedNav";
 import Cookies from 'js-cookie';
 
 const { Text, Title } = Typography;
@@ -90,8 +91,8 @@ const UserProfile = () => {
   return (
     isLoading ? (<Spin size="large" />) : (
       <Flex style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-
-        <Title level={2} style={{ marginBottom: '24px' }}>User Profile</Title>
+         <FixedNav />
+        <Title level={2} style={{ marginBottom: '24px', marginTop: '20px' }}>User Profile</Title>
         <Flex flexDirection="column" alignItems="center">
           <Form form={form} onFinish={handleSubmit} layout="vertical" style={{ border: '1px solid #d9d9d9', padding: '20px', borderRadius: '5px' }}>
             <Row gutter={[16, 16]}>

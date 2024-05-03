@@ -1,0 +1,66 @@
+.Bookcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f8f9fa;
+  }
+  
+  .Bookcard {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .BookcardHeader {
+    padding: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .BookcardBody {
+    padding: 16px;
+  }
+  
+  .Bookitem {
+    margin-bottom: 12px;
+  }
+  
+  .Bookrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .Booklabel {
+    font-weight: bold;
+  }
+  
+  .Bookamount {
+    margin-left: 8px;
+  }
+  
+  .BookcardFooter {
+    padding: 16px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .BookpurchaseBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .BookpurchaseBtn:hover {
+    background-color: #0056b3;
+  }
