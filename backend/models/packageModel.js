@@ -9,6 +9,8 @@ const packageSchema = new Schema({
   accomodation : {type: String, required: true, enum: ['2-star', '3-star', '4-star', '5-star']},
   meal: {type: [String], required: true, enum: ['breakfast', 'lunch', 'dinner']},
   transport: { type: String, default: ''},
+  destination: { type: String, default: ''},
+  price: { type: Number, default: ''},
   imageUrl: { type: String, default: ''}
 })
 

@@ -2,7 +2,7 @@ const PackageModel = require('../models/packageModel')
 
 
 const addPackage = async (req, res, next) => {
-  const { name, members, accomodation, meal, transport, imageUrl } = req.body 
+  const { name, members, accomodation, meal, transport, imageUrl, destination, price } = req.body 
   let package
 
   try {
@@ -12,7 +12,9 @@ const addPackage = async (req, res, next) => {
         accomodation,
         meal,
         transport,
-        imageUrl
+        imageUrl,
+        destination,
+        price
 
     })
     await package.save()
@@ -47,13 +49,13 @@ const getPackage = async (req, res, next) => {
 
 const updatePackage = async (req, res, next) => {
   const id = req.params.id
-  const { name, members, accomodation, meal, transport, imageUrl } = req.body 
+  const { name, members, accomodation, meal, transport, imageUrl, destination, price } = req.body 
 
   let package
 
   try {
     package = await PackageModel.findByIdAndUpdate(id, {
-        name, members, accomodation, meal, transport, imageUrl
+        name, members, accomodation, meal, transport, imageUrl, destination, price
     })
     package = await package.save()
   } catch (err) {
