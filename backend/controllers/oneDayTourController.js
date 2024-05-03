@@ -74,7 +74,7 @@ const addOneDayTour = async (req, res, next) => {
   
       const totalDistance = distanceFirst + distanceFirstSecond + distanceSecondThird;
   
-      if (totalDistance > 200) {
+      if (totalDistance > 400) {
         return res.status(400).json({ error: 'Total distance exceeds the limit of 200, because this is one day tour' });
       }
   
@@ -85,7 +85,7 @@ const addOneDayTour = async (req, res, next) => {
         { address: secondAddress, distance: distanceSecond, slat: secondLat, slng: secondLng },
         { address: thirdAddress, distance: distanceThird, tlat: thirdLat, tlng: thirdLng }
       ].sort((a, b) => a.distance - b.distance);
-      return res.status(200).json({ sortedDistances});
+      return res.status(200).json({ sortedDistances, totalDistance});
     } catch (error) {
       console.error('Error processing locations:', error);
       return res.status(500).json({ error: 'Internal server error' });
@@ -115,7 +115,50 @@ const addOneDayTour = async (req, res, next) => {
       
     };
 
+
+    const calculateTotalCost = async (req, res, next) => {
+      try {
+    
+        const lastPackage = await PackageModel.findOne().sort({ _id: -1 });
+        const accommodationRates = {
+          '2-star': 3000,
+          '3-star': 6000,
+          '4-star': 15000,
+          '5-star': 20000,
+        };
+        const mealRates = {
+          breakfast: 1000,
+          lunch: 2000,
+          dinner: 1500,
+        };
+        const transportRates = {
+          car: 200,
+          van: 400,
+          bus: 500,
+        };
+        const accommodationCost = lastPackage.members * accommodationRates[lastPackage.accomodation];
+        const mealCost = lastPackage.meal.reduce((total, meal) => total + mealRates[meal], 0) * lastPackage.members;
+        const transportCost = transportRates[lastPackage.transport] * totalDistance;
+        const totalCost = accommodationCost + mealCost + transportCost;
+         const totalAmount = (totalCost).toFixed(2)
+
+        const eachAmount = [
+          { accommodation: accommodationCost},
+          { meal: mealCost },
+          { transport: transportCost},
+          { totalamount: totalAmount}
+        ]
+    
+        return res.status(200).json({ eachAmount });
+      } catch (error) {
+        console.error('Error in someOtherFunction:', error);
+        res.status(500).json({ error: 'Internal server error' });
+      }
+    };
+    
+
   module.exports = {
     addOneDayTour,
-    getOneDayTour
+    getOneDayTour,
+    calculateTotalCost
 }
