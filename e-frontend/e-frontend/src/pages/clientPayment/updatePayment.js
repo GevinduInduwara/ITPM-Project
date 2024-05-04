@@ -10,8 +10,8 @@ export default function Updatepayment(props) {
 
     const [id] = useState(location.state._id);
     const [name,setname] =useState(location.state.name);
-    const [amount,setamount] =useState(location.state.amount);
-    const [payment,setpayment] =useState(location.state.payment);
+    const [email,setemail] =useState(location.state.email);
+    const [phone,setphone] =useState(location.state.phone);
 
 
     const putUrl = `http://localhost:8000/api/payment/update/${id}`;
@@ -21,8 +21,8 @@ export default function Updatepayment(props) {
     const data = {
 
       name,
-      amount,
-      payment,
+      email,
+      phone,
 
     }
       
@@ -72,13 +72,13 @@ export default function Updatepayment(props) {
     
         <div class="form-group">
          <b> <label for="amount">Amount</label></b><br></br>
-         <input onChange={(e)=> {setamount(e.target.value)}} value={amount} type="text" required/>
+         <input onChange={(e)=> {setemail(e.target.value)}} value={email} type="text" required/>
         </div>
     
     
         <div class="form-group">
          <b> <label for="payment">Payment</label></b><br></br>
-         <input onChange={(e)=> {setpayment(e.target.value)}} value={payment} type="text" required/>
+         <input onChange={(e)=> {setphone(e.target.value)}} value={phone} type="text" required/>
         </div>
     
        

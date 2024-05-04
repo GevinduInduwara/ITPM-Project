@@ -52,7 +52,7 @@ const Dashboard = () => {
         
           <div className="tile-content"><h1>Offer Handling</h1></div>
         </Link>
-        <Link to="/page1" className="navigation-tile">
+        <Link to="/AllPayment" className="navigation-tile">
          
           <div className="tile-content"><h1>Payment Handling</h1></div>
         </Link>
