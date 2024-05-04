@@ -1,4 +1,7 @@
 const LocationModel = require('../models/locationModel')
+const PackageModel = require('../models/packageModel')
+
+let totalDistance = '';
 
 const addOneDayTour = async (req, res, next) => {
     const { pickup, first, second, third } = req.body;
