@@ -46,7 +46,7 @@ return(
           <div class="form-group-members">
             <b><h5>Members</h5></b>
             <input type="text" class="form-control" id="members" placeholder="Enter Members" onChange={(e)=> { setmembers(e.target.value) }}/>
-            {error && members.length <= 0 ? <label>Members Name cannot be empty!</label> : ""}
+            {error && members.length <= 0 ? <label className="error-label">Members Name cannot be empty!</label> : ""}
           </div>
 
           <div class="form-group-accomodation">
@@ -58,7 +58,7 @@ return(
               <option value="4-star">4-star</option>
               <option value="5-star">5-star</option>
             </select>
-            {error && accomodation.length <= 0 ? <label>Accommodation cannot be empty!</label> : ""}
+            {error && accomodation.length <= 0 ? <label className="error-label">Accommodation cannot be empty!</label> : ""}
           </div>
 
           <div class="form-group-meal">
@@ -101,12 +101,12 @@ return(
         </div>
        </div>
          {error&&meal.length<=0?
-        <label>Meal cannot be empty!</label>:""}
+        <label className="error-label">Meal cannot be empty!</label>:""}
 
           <div class="form-group-transport">
             <b><h5>Transport</h5></b>
             <input type="text" class="form-control" id="transport" placeholder="Enter Transport" onChange={(e)=> { settransport(e.target.value) }}/>
-            {error && transport.length <= 0 ? <label>Transport cannot be empty!</label> : ""}
+            {error && transport.length <= 0 ? <label className="error-label">Transport cannot be empty!</label> : ""}
           </div>
           <div style={{ marginLeft: '40%', marginTop:'5%' }}>
           <a href="/showonedaytour"><button type="button" onClick={sendData} className="btn btn-success btn-lg">View</button></a>

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Map, GoogleApiWrapper } from "google-maps-react";
 import FixedNav from "../../Components/fixednavbar/FixedNav";
 import Footer from "../../Components/footer/footer";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./oneDayTour.css";
 
