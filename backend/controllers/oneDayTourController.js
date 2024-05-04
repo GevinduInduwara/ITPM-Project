@@ -75,7 +75,7 @@ const addOneDayTour = async (req, res, next) => {
       const distanceFirstSecond = secondLat && secondLng ? calculateDistance(firstLat, firstLng, secondLat, secondLng) : 0;
       const distanceSecondThird = thirdLat && thirdLng ? calculateDistance(secondLat, secondLng, thirdLat, thirdLng) : 0;
   
-      const totalDistance = distanceFirst + distanceFirstSecond + distanceSecondThird;
+      totalDistance = distanceFirst + distanceFirstSecond + distanceSecondThird;
   
       if (totalDistance > 400) {
         return res.status(400).json({ error: 'Total distance exceeds the limit of 200, because this is one day tour' });

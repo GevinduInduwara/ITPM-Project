@@ -1,0 +1,49 @@
+/* Home.css */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slideshow-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.carousel .slide {
+  background: none;
+}
+
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+  border: none;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 20px;
+}
+
+.package-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.package-cards .card {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 5px;
+  background: white;
+}
+
+.package-cards .card h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.package-cards .card p {
+  margin: 0 0 10px;
+}

@@ -1,0 +1,40 @@
+/* UpdateOffer.css */
+
+.offerupdate {
+    padding-top: 60px; /* Adjust as needed */
+  }
+  
+  .offerupdatebg {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+  }
+  
+  .addofferupdateheader {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .offerupdatecontainer {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  .selectofferupdateform label {
+    font-weight: bold;
+  }
+  
+  .addofferupdatebutton {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .offerupdatecontainer {
+      max-width: 100%; /* Full width on smaller screens */
+      padding: 0 20px; /* Add horizontal padding */
+    }
+  }
+  

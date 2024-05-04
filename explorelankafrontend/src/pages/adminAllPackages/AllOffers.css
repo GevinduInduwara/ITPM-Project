@@ -1,0 +1,54 @@
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+    padding-top: 20px; /* Add space above the content */
+  }
+  
+  .header {
+    text-align: center; /* Center the header content */
+    margin-bottom: 20px; /* Add space below the header */
+    position: relative; /* Position relative for absolute positioning of search bar */
+  }
+  
+  .search-bar {
+    position: absolute;
+    top: 0;
+    right: 100;
+  }
+  
+  .search-bar input[type="text"],
+
+  .search-bar button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    
+  }
+  
+  .alloffersCard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .offercard {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .offercard:hover {
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+    border-color: #ccc; /* Change border color on hover */
+  }
+  
+  .offercard h3 {
+    margin-top: 0;
+  }
+  
+  .offercard p {
+    margin-bottom: 0;
+  }
+  

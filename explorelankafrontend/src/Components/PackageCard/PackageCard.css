@@ -1,0 +1,33 @@
+.package-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min and max width as needed */
+  gap: 20px; /* Adjust gap between cards */
+}
+
+.package-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.package-card h3 {
+  margin-top: 0;
+}
+
+.package-card p {
+  margin-bottom: 10px;
+}
+
+.purchase-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.purchase-button:hover {
+  background-color: #0056b3;
+}
