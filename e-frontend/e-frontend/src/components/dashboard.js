@@ -1,104 +1,66 @@
-import React, { useState } from "react";
-import { NavLink } from 'react-router-dom';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-import CelebrationIcon from '@mui/icons-material/Celebration';
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import axios from 'axios'; // You might need axios for API requests
+import SideNavBar from '../../Components/Sidenavbar/sideNavBar.js';
+import './AdminDashboard.css';
 
-import './dashboard.css';
+const Dashboard = () => {
+  const [data, setData] = useState([]);
 
-const SideNavBar = () => {
-    const [isExpanded, setExpandState] = useState(false);
-    const menuItems = [
-        {
-            path: "#",
-            text: "My Account",
-            icon: <AccountCircleIcon />,
-        },
-        {
-            path: "/admin_orders_view",
-            text: "Order Management",
-            icon: <ShoppingCartIcon />,
-        },
-        {
-            path: "/admin_menu_view",
-            text: "Menu Management",
-            icon: <RestaurantMenuIcon />,
-        },
-        {
-            path: "/admin_employee_list",
-            text: "Employee Handling",
-            icon: <PeopleAltIcon />,
-        },
-        {
-            path: "/admin_employee_list",
-            text: "Delivery Handling",
-            icon: <DeliveryDiningIcon />,
-        },
-        {
-            path: "/Supplier",
-            text: "Supplier Handling",
-            icon: <LocalShippingIcon />,
-        },
-        {
-            path: "#",
-            text: "Customer Handling",
-            icon: <SupportAgentIcon />,
-        },
-        {
-            path: "#",
-            text: "Event Reservations",
-            icon: <CelebrationIcon />,
-        },
-        {
-            path: "/admin_feedback_view",
-            text: "Feedback Handling",
-            icon: <InsertEmoticonIcon />,
-        },
-        {
-            path: "/admin_sales_view",
-            text: "Sales",
-            icon: <AssessmentIcon />,
-        },
-    ];   
+  useEffect(() => {
+    // Fetch data from your backend API
+    axios.get('/api/dashboard')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-    return (
-        <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
-            <div className="nav-upper">
-                <div className="nav-heading">
-                    {isExpanded && ( 
-                        <div className="nav-brand">
-                            <h3 className="sidenav-heading">Dashboard</h3>
-                        </div>
-                    )}
-                    <button className={isExpanded ? "burger burger-in" : "burger burger-out"}
-                        onClick={() => setExpandState(!isExpanded)}
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-                <div className="nav-menu">
-                    {menuItems.map((item, index) => (
-                        <NavLink to={item.path} key={index} className={isExpanded ? "menu-items" : "menu-items menu-items-NX"} activeclassName="active">
-                            <div className="menu-item-icon">{item.icon}</div>
-                            <div style={{display: isExpanded ? "block" : "none"}} className="menu-items-text" id="menu-items-text">{item.text}</div>
-                        </NavLink>
-                    ))}
-                </div>
-            </div>
-            <div className="nav-footer">
-                <div className="logout-icon" alt="logout"><LogoutIcon /></div>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <SideNavBar/>
+      
+      <h1><center>Explore Lanka - AdminDashboard</center></h1>
+      <br></br><br></br><br></br>
+      <div className="dashboard-container">
+        {data.map(item => (
+          <div key={item.id} className="dashboard-item">
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="navigation-tiles">
+        <Link to="/page1" className="navigation-tile">
+         
+          <div className="tile-content"><h1>My Account</h1></div>
+        </Link>
+        <Link to="/page2" className="navigation-tile" >
+          
+          <div className="tile-content"><h1>Package Handling</h1></div>
+        </Link>
+        <Link to="/page1" className="navigation-tile">
+          
+          <div className="tile-content"><h1>User Handling</h1></div>
+        </Link>
+        <Link to="/page1" className="navigation-tile">
+       
+          <div className="tile-content"><h1>Chat Bot Service</h1></div>
+        </Link>
+        <Link to="/page1" className="navigation-tile">
+        
+          <div className="tile-content"><h1>Offer Handling</h1></div>
+        </Link>
+        <Link to="/AllPayment" className="navigation-tile">
+         
+          <div className="tile-content"><h1>Payment Handling</h1></div>
+        </Link>
+
+      </div>
+    </div>
+  );
 };
 
-export default SideNavBar;
+export default Dashboard;

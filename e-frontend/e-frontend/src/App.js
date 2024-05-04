@@ -15,6 +15,7 @@ import UpdatePayment from './pages/clientPayment/updatePayment';
 
 
 import {BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import Dashboard from './pages/Admin Dashboard/AdminDashboard';
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
             <Route path='/ex' element={<ex/>}/>
             <Route path='/AllPayments' element={<AllPayments/>}/>
             <Route path='/updatePayment' element={<UpdatePayment/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
             
         </Routes>
       </Router>
