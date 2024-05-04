@@ -1,0 +1,36 @@
+/* AboutUs.css */
+
+.about-us-container {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.about-us-container h2 {
+  font-size: 24px;
+  color: #007bff; /* Change heading color to blue */
+  margin-bottom: 20px; /* Add space below heading */
+}
+
+.about-us-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333; /* Change paragraph text color to dark grey */
+  margin-bottom: 10px; /* Add space below each paragraph */
+}
+
+.vision-mission-container {
+  margin-top: 30px;
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.vision-mission-container h3 {
+  font-size: 20px;
+  color: #007bff; /* Change topic heading color to blue */
+  margin-bottom: 10px; /* Add space below each topic heading */
+}
+
+.vision-mission-container p {
+  font-size: 16px;
+  color: #333; /* Change topic text color to dark grey */
+  margin-bottom: 20px; /* Add space below each topic */
+}

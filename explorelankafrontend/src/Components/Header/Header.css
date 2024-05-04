@@ -1,0 +1,26 @@
+/* Header.css */
+.logo {
+    width: 100px; /* Adjust the width as needed */
+  }
+  
+  .custom-search {
+    width: 300px; /* Adjust the width as needed */
+    border-radius: 25px; /* Rounded corners */
+    border: 1px solid #000000; /* Border color */
+    padding: 10px; /* Padding */
+    outline: none; /* Remove outline */
+  }
+  
+  .custom-search::placeholder {
+    color: #000000; /* Placeholder color */
+  }
+  
+  /* Navbar styling */
+  .navbar-nav .nav-link {
+    color: #000000; /* Link color */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #070707; /* Hover color */
+  }
+  

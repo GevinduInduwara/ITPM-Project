@@ -10,6 +10,7 @@ const authRoute = require('./routes/login.routes.js');
 const userRoutes = require('./routes/user.routes');
 const packageRoute = require('./routes/packageRoutes')
 const locationRoute = require('./routes/locationRoutes')
+const offerRoute = require('./routes/offerRoutes')
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/auth', authRoute);
 app.use('/users', auth,userRoutes);
 app.use('/api/package', packageRoute)
 app.use('/api',locationRoute )
+app.use('/api/offer', offerRoute)
 
 //DB connection and starting server
 connectDB()

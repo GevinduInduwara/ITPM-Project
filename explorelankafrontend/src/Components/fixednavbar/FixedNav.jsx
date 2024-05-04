@@ -12,9 +12,9 @@ export default function FixedNav({selectedPage}) {
             <img className='logoImage' src={logo} alt="Logo Image" />
         </Link>
         <ul className="navPages">
-            <li className={`navPage ${selectedPage == 'Home' ? 'active' : null}`}><Link to={"/"} href="">Home</Link></li>
+            <li className={`navPage ${selectedPage == 'Home' ? 'active' : null}`}><Link to={"/Home"} href="">Home</Link></li>
             <li className={`navPage ${selectedPage == 'packages' ? 'active' : null}`}><Link to={"/packagegridview"} href="">Packages</Link></li>
-            <li className={`navPage ${selectedPage == 'offers' ? 'active' : null}`}><Link to={"/about_us"}>Offers</Link></li>
+            <li className={`navPage ${selectedPage == 'offers' ? 'active' : null}`}><Link to={"/viewoffer"}>Offers</Link></li>
             <li className={`navPage ${selectedPage == 'dayTour' ? 'active' : null}`}><Link to={"/onedaytour"} href="">Day Tours</Link></li>
             <li className={`navPage ${selectedPage == 'more' ? 'active' : null}`}><Link>More</Link></li>
             {/* <li className="navPage shopping"><a href=""><ShoppingCartRoundedIcon sx={{ fontSize: 20 }}/></a></li> */}
